@@ -25,6 +25,8 @@ main.centered {
 pre {
     white-space: pre-wrap;
     font-family: "Source Code Pro", monospace;
+    max-width: 300px;
+    word-break: break-all;
 }
 code {
     color: #999999;
@@ -79,6 +81,7 @@ button {
     font-size: 1rem;
     border: solid 1px transparent;
     font-family: "Source Code Pro", monospace;
+    white-space: nowrap;
 }
 table {
     border-collapse: collapse;

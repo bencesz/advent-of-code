@@ -25,7 +25,7 @@ class InputRegister {
     constructor(dayIndex) {
         this._inputEl = document.querySelector('.input input');
         this._inputResultEl = document.querySelector('.input pre');
-        this._dataKey = 'AOC_INPUT_DAY' + dayIndex;
+        this._dataKey = 'AOC_2019_INPUT_DAY' + dayIndex;
     }
 
     set input(data) {

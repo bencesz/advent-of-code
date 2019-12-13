@@ -88,6 +88,16 @@ table td {
     padding: 15px;
     font-size: 1.5rem;
 }
+article em {
+    color: #ffffff;
+    font-style: normal;
+    text-shadow: 0 0 5px #ffffff;
+}
+article em.star {
+    color: #ffff66;
+    font-style: normal;
+    text-shadow: 0 0 5px #ffff66;
+}
 footer {
     padding: 15px;
     text-align: center;

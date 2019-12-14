@@ -19,6 +19,10 @@ class OutputCalculator {
         output.innerHTML = text;
         this.output = text;
     }
+
+    parseInput(splitBy = '\n') {
+        return this._inputData.trim().split(splitBy).map(value => parseInt(value));
+    }
 }
 
 class InputRegister {

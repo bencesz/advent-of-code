@@ -1,21 +1,19 @@
+const DAY_INDEX = 1;
+
 window.onload = () => {
-    new InputRegister(1).init();
+    new InputRegister(DAY_INDEX).init();
 };
 
 class Solution1 extends OutputCalculator {
-    constructor(dayIndex) { super(dayIndex); }
+    constructor() { super(DAY_INDEX); }
 
     calculateFuelRequired = (mass) => Math.floor(mass / 3) - 2;
 
     calculate() {
         // Create array from lines and turn values into integers
-        const parsedInput = this._inputData
-            .trim()
-            .split('\n')
-            .map(value => this.calculateFuelRequired(parseInt(value)));
+        const parsedInput = this.parseInput().map(this.calculateFuelRequired);
         // Accumulate values
-        const output = parsedInput
-            .reduce((a, b) => a + b);
+        const output = parsedInput.reduce((a, b) => a + b);
 
         // Fill output field
         this.fillOutput(output);
@@ -23,7 +21,7 @@ class Solution1 extends OutputCalculator {
 }
 
 class Solution2 extends OutputCalculator {
-    constructor(dayIndex) { super(dayIndex); }
+    constructor() { super(DAY_INDEX); }
 
     calculateFuelRequired = (mass) => Math.floor(mass / 3) - 2;
 
@@ -43,13 +41,10 @@ class Solution2 extends OutputCalculator {
 
     calculate() {
         // Create array from lines and turn values into integers
-        const parsedInput = this._inputData
-            .trim()
-            .split('\n')
-            .map(value => this.calculateTotalFuelRequired(parseInt(value)));
+        const parsedInput = this.parseInput().map(this.calculateTotalFuelRequired);
+
         // Accumulate values
-        const output = parsedInput
-            .reduce((a, b) => a + b);
+        const output = parsedInput.reduce((a, b) => a + b);
 
         // Fill output field
         this.fillOutput(output);

@@ -1,4 +1,8 @@
 * { box-sizing: border-box; }
+*::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
 html, body {
     margin: 0;
     padding: 15px;
@@ -81,13 +85,22 @@ a:hover {
 button {
     position: relative;
     z-index: 1;
-    background: #ffffff;
-    color: #0f0f23;
+    cursor: pointer;
+    background: transparent;
+    color: #009900;
     padding: 10px;
     font-size: 1rem;
-    border: solid 1px transparent;
+    border: solid 1px #009900;
     font-family: "Source Code Pro", monospace;
     white-space: nowrap;
+}
+.input-file input[type="file"]:hover + button,
+.input-file input[type="file"]:focus + button,
+button:hover,
+button:focus {
+    cursor: pointer;
+    color: #99ff99;
+    border-color: #99ff99;
 }
 table {
     border-collapse: collapse;
@@ -96,6 +109,23 @@ table td {
     border: solid 1px #999999;
     padding: 15px;
     font-size: 1.5rem;
+}
+article {
+    max-width: 45em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+article:first-child {
+    margin-top: 0;
+}
+article h2 {
+    color: #ffffff;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    white-space: nowrap;
+}
+article h2 + * {
+    margin-top: 0;
 }
 article em {
     color: #ffffff;
@@ -106,6 +136,20 @@ article em.star {
     color: #ffff66;
     font-style: normal;
     text-shadow: 0 0 5px #ffff66;
+}
+article ul {
+    list-style-type: none;
+    padding: 0;
+}
+article li {
+    padding-left: 2.5em;
+    position: relative;
+}
+article li::before {
+    content: '\00a0\00a0-\00a0';
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 footer {
     padding: 15px;

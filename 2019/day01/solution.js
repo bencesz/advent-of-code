@@ -1,11 +1,12 @@
 const DAY_INDEX = 1;
+const YEAR_INDEX = 2019;
 
 window.onload = () => {
-    new InputRegister(DAY_INDEX).init();
+    new InputRegister(DAY_INDEX, YEAR_INDEX).init();
 };
 
 class Solution1 extends OutputCalculator {
-    constructor() { super(DAY_INDEX); }
+    constructor() { super(DAY_INDEX, YEAR_INDEX); }
 
     calculateFuelRequired = (mass) => Math.floor(mass / 3) - 2;
 
@@ -21,7 +22,7 @@ class Solution1 extends OutputCalculator {
 }
 
 class Solution2 extends OutputCalculator {
-    constructor() { super(DAY_INDEX); }
+    constructor() { super(DAY_INDEX, YEAR_INDEX); }
 
     calculateFuelRequired = (mass) => Math.floor(mass / 3) - 2;
 

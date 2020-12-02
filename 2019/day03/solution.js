@@ -1,7 +1,8 @@
 const DAY_INDEX = 3;
+const YEAR_INDEX = 2019;
 
 window.onload = () => {
-    new InputRegister(DAY_INDEX).init();
+    new InputRegister(DAY_INDEX, YEAR_INDEX).init();
 };
 
 const Orientation = {
@@ -63,7 +64,7 @@ class Wire {
 }
 
 class Solution1 extends OutputCalculator {
-    constructor() { super(DAY_INDEX); }
+    constructor() { super(DAY_INDEX, YEAR_INDEX); }
 
     calculate() {
         // Create array from lines and turn values into integers
@@ -107,7 +108,7 @@ class Solution1 extends OutputCalculator {
 }
 
 class Solution2 extends OutputCalculator {
-    constructor() { super(DAY_INDEX); }
+    constructor() { super(DAY_INDEX, YEAR_INDEX); }
 
     calculate() {
         // Create array from lines and turn values into integers

@@ -1,6 +1,6 @@
 class OutputCalculator {
-    constructor(dayIndex) {
-        this._inputData = new InputRegister(dayIndex).input;
+    constructor(dayIndex, yearIndex) {
+        this._inputData = new InputRegister(dayIndex, yearIndex).input;
         this._outputEl = document.querySelector('.output pre');
         this._outputData = null;
     }
@@ -30,10 +30,10 @@ class OutputCalculator {
 }
 
 class InputRegister {
-    constructor(dayIndex) {
+    constructor(dayIndex, yearIndex) {
         this._inputEl = document.querySelector('.input input');
         this._inputResultEl = document.querySelector('.input pre');
-        this._dataKey = 'AOC_2019_INPUT_DAY' + dayIndex;
+        this._dataKey = `AOC_${yearIndex}_INPUT_DAY${dayIndex}`;
     }
 
     set input(data) {

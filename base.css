@@ -7,13 +7,12 @@ html, body {
     font-family: "Source Code Pro", monospace;
     font-size: 12pt;
     line-height: 16pt;
-    min-width: 60em;
 }
 header {
     padding: 15px;
 }
 main {
-    min-height: 90vh;
+    min-height: 75vh;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -21,6 +20,13 @@ main {
 }
 main.centered {
     align-items: center;
+}
+main.calendars {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+main.calendars article {
+    margin: 0 16px;
 }
 pre {
     white-space: pre-wrap;

@@ -20,8 +20,12 @@ class OutputCalculator {
         this.output = text;
     }
 
-    parseInput(splitBy = '\n') {
-        return this._inputData.trim().split(splitBy).map(value => parseInt(value));
+    parseInput(parseOptions) {
+        const options = { splitBy: '\n', integerOnly: true, ...parseOptions };
+        return this._inputData
+            .trim()
+            .split(options.splitBy)
+            .map(value => options.integerOnly ? parseInt(value) : value);
     }
 }
 

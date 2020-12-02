@@ -91,7 +91,7 @@ class Solution1 extends OutputCalculator {
 
     calculate() {
         // Create array from lines and turn values into integers
-        const parsedInput = this.parseInput(',');
+        const parsedInput = this.parseInput({ splitBy: ',' });
 
         // Run program
         const output = new IntCodeProgram(parsedInput, 12, 2).run();
@@ -106,7 +106,7 @@ class Solution2 extends OutputCalculator {
 
     calculate() {
         // Create array from lines and turn values into integers
-        const parsedInput = this.parseInput(',');
+        const parsedInput = this.parseInput({ splitBy: ',' });
 
         // Run program
         const verbAndNoun = new IntCodeProgram(parsedInput).findVerbAndNoun();

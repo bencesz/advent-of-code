@@ -34,8 +34,16 @@ main.calendars article {
 }
 pre {
     font-family: "Source Code Pro", monospace;
-    max-width: 300px;
     word-break: break-all;
+}
+fieldset {
+    width: 50%;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+fieldset pre {
+    overflow: auto;
+    width: 100%;
 }
 code {
     color: #999999;

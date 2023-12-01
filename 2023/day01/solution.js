@@ -63,7 +63,6 @@ class Solution2 extends OutputCalculator {
         );
 
         // Accumulate values
-        console.log(lines)
         const output = lines.reduce((acc,val) => acc + val);
 
         // Fill output field

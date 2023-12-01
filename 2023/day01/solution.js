@@ -41,13 +41,13 @@ class Solution2 extends OutputCalculator {
         const lines = parsedInput.map(
             line => {
                 const numbers = line
-                    .replaceAll('one', 'onee')
-                    .replaceAll('two', 'twoo')
-                    .replaceAll('three', 'threee')
-                    .replaceAll('five', 'fivee')
-                    .replaceAll('seven', 'sevenn')
-                    .replaceAll('eight', 'eightt')
-                    .replaceAll('nine', 'ninee')
+                    .replaceAll('one', 'o1e')
+                    .replaceAll('two', 't2o')
+                    .replaceAll('three', 't3e')
+                    .replaceAll('five', 'f5e')
+                    .replaceAll('seven', 's7n')
+                    .replaceAll('eight', 'e8t')
+                    .replaceAll('nine', 'n9e')
                     .replaceAll('one', '1')
                     .replaceAll('two', '2')
                     .replaceAll('three', '3')

@@ -37,27 +37,24 @@ class Solution2 extends OutputCalculator {
         const parsedInput = this.parseInput({ integerOnly: false, splitBy: '\r\n' });
 
         // Solution
-        const regexp = /one|two|three|four|five|six|seven|eight|nine|\d/g;
+        const regexp = /(?=(one|two|three|four|five|six|seven|eight|nine|\d))/g;
         const lines = parsedInput.map(
             line => {
-                const numbers = line
-                    .replaceAll('one', 'o1e')
-                    .replaceAll('two', 't2o')
-                    .replaceAll('three', 't3e')
-                    .replaceAll('five', 'f5e')
-                    .replaceAll('seven', 's7n')
-                    .replaceAll('eight', 'e8t')
-                    .replaceAll('nine', 'n9e')
-                    .replaceAll('one', '1')
-                    .replaceAll('two', '2')
-                    .replaceAll('three', '3')
-                    .replaceAll('four', '4')
-                    .replaceAll('five', '5')
-                    .replaceAll('six', '6')
-                    .replaceAll('seven', '7')
-                    .replaceAll('eight', '8')
-                    .replaceAll('nine', '9')
-                    .match(regexp)
+                const numbers = [...line
+                    .matchAll(regexp)]
+                    .map(items => isNaN(Number(items[1]))
+                       ? items[1]
+                            .replace('one', '1')
+                            .replace('two', '2')
+                            .replace('three', '3')
+                            .replace('four', '4')
+                            .replace('five', '5')
+                            .replace('six', '6')
+                            .replace('seven', '7')
+                            .replace('eight', '8')
+                            .replace('nine', '9')
+                        : items[1]
+                    )
                 return Number(numbers[0] + numbers[numbers.length - 1])
             }
         );

@@ -52,7 +52,7 @@ class Solution2 extends OutputCalculator {
         const findGreen = /\d+\sg/g
         const findBlue = /\d+\sb/g
 
-        const getMin = (list, regExp) => list.match(regExp).map(g => +g.split(" ")[0]).sort((a,b) => a - b).pop()
+        const getMin = (list, regExp) => Math.max(...list.match(regExp).map(g => +g.split(" ")[0]))
 
         for (let game of parsedInput) {
             const draws = game.split(": ")[1]

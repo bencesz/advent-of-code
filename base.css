@@ -1,19 +1,31 @@
+:root {
+    --bg-color: #0f0f23;
+    --text-color: #cccccc;
+    --code-bg: #10101a;
+    --code-color: #999999;
+    --link-color: #009900;
+    --link-color-hover: #99ff99;
+    --border-color: #333340;
+    --header-color: #ffffff;
+    --highlight-color: #ffff66;
+}
+
 * { box-sizing: border-box; }
 *::-moz-focus-inner {
     padding: 0;
     border: 0
 }
-html, body {
+body {
     margin: 0;
-    padding: 15px;
-    background: #0f0f23;
-    color: #cccccc;
+    padding: 2rem;
+    background: var(--bg-color);
+    color: var(--text-color);
     font-family: "Source Code Pro", monospace;
-    font-size: 12pt;
-    line-height: 16pt;
+    font-size: 16px;
+    line-height: 1.5;
 }
 header {
-    padding: 15px;
+    padding: 1rem 0;
 }
 main {
     min-height: 75vh;
@@ -21,6 +33,9 @@ main {
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
+}
+header, main {
+    -webkit-text-size-adjust: none;
 }
 main.centered {
     align-items: center;
@@ -30,44 +45,52 @@ main.calendars {
     flex-wrap: wrap;
 }
 main.calendars article {
-    margin: 0 16px;
+    margin: 0 1rem;
 }
 pre {
     font-family: "Source Code Pro", monospace;
     word-break: break-all;
 }
+pre.wrap {
+    max-width: 100%;
+    white-space: pre-wrap;
+}
 fieldset {
     width: 50%;
     flex-shrink: 1;
     overflow: hidden;
+    border-color: var(--border-color);
+    background: var(--code-bg);
 }
 fieldset pre {
     overflow: auto;
     width: 100%;
 }
 code {
-    color: #999999;
+    color: var(--code-color);
     position: relative;
     display: inline-block;
     margin: 0;
     padding: 0;
 }
 code::before {
+    z-index: -1;
     content: "";
     position: absolute;
     display: block;
-    left: -2px;
-    right: -2px;
+    left: -4px;
+    right: -4px;
     top: 0;
     bottom: 0;
-    border: 1px solid #333340;
+    border: 1px solid var(--border-color);
+    background: var(--code-bg);
 }
 a {
     text-decoration: none;
-    color: #009900;
+    color: var(--link-color);
 }
 a:hover {
-    color: #99ff99;
+    color: var(--link-color-hover);
 }
 .content {
     display: flex;
@@ -94,10 +117,10 @@ button {
     z-index: 1;
     cursor: pointer;
     background: transparent;
-    color: #009900;
-    padding: 10px;
+    color: var(--link-color);
+    padding: 0.5rem;
     font-size: 1rem;
-    border: solid 1px #009900;
+    border: solid 1px var(--link-color-hover);
     font-family: "Source Code Pro", monospace;
     white-space: nowrap;
 }
@@ -106,49 +129,49 @@ button {
 button:hover,
 button:focus {
     cursor: pointer;
-    color: #99ff99;
-    border-color: #99ff99;
+    color: var(--link-color-hover);
+    border-color: var(--link-color-hover);
 }
 table {
     border-collapse: collapse;
 }
 table td {
-    border: solid 1px #999999;
-    padding: 15px;
-    font-size: 1.5rem;
+    border: solid 1px var(--border-color);
+    padding: 1.25rem;
+    font-size: 1rem;
 }
 article {
-    margin-bottom: 2em;
-    margin-top: 2em;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 article:first-child {
     margin-top: 0;
 }
 article h2 {
-    color: #ffffff;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    color: var(--header-color);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     white-space: nowrap;
 }
 article h2 + * {
     margin-top: 0;
 }
 article em {
-    color: #ffffff;
+    color: var(--header-color);
     font-style: normal;
-    text-shadow: 0 0 5px #ffffff;
+    text-shadow: 0 0 5px var(--header-color);
 }
 article em.star {
-    color: #ffff66;
+    color: var(--highlight-color);;
     font-style: normal;
-    text-shadow: 0 0 5px #ffff66;
+    text-shadow: 0 0 5px var(--highlight-color);
 }
 article ul {
     list-style-type: none;
     padding: 0;
 }
 article li {
-    padding-left: 2.5em;
+    padding-left: 2rem;
     position: relative;
 }
 article li::before {
@@ -158,6 +181,6 @@ article li::before {
     top: 0;
 }
 footer {
-    padding: 15px;
+    padding: 1rem;
     text-align: center;
 }

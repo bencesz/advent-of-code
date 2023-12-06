@@ -24,7 +24,7 @@ class Solution1 extends OutputCalculator {
 }
 
 class Solution2 extends OutputCalculator {
-    constructor() { super(DAY_INDEX, YEAR_INDEX); }
+    constructor() { super(DAY_INDEX, YEAR_INDEX) }
 
     calculate() {
         // Create array from lines
